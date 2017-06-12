@@ -21,3 +21,7 @@ USER jenkins
 RUN mkdir /home/jenkins/.jenkins
 VOLUME /home/jenkins/.jenkins
 WORKDIR /home/jenkins
+
+COPY jenkins-slave /usr/local/bin/jenkins-slave
+
+ENTRYPOINT ["jenkins-slave"]
